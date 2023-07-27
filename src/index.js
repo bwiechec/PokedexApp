@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import PokemonInfo from "./routes/PokemonInfo/PokemonInfo";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/PokedexApp">
     {/*<nav style={{textAlign: "center", fontSize: '50px'}}>POKEDEX</nav>*/}
     <App/>
     <Routes key={'Routes'}>
