@@ -1,18 +1,17 @@
-import React from 'react';
-import PokemonType from './PokemonType/PokemonType';
+import React from "react";
+import PokemonType from "./PokemonType/PokemonType";
 import PokemonStats from "./PokemonStats/PokemonStats";
 
-export default function PokemonBasicInfo(props) {
+export default function PokemonBasicInfo() {
   return (
     <div
-      key={'pokeStats'}
+      key={"pokeStats"}
       className={"pokeStats"}
-      style={{marginTop: "5%"}}>
+      style={{ marginTop: "5%", display: "flex" }}
+    >
+      <PokemonStats />
 
-      <PokemonStats statList={props?.statList}/>
-
-      <PokemonType typeList={props?.typeList}/>
-
+      <PokemonType />
     </div>
-  )
+  );
 }

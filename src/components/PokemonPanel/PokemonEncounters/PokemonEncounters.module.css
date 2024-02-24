@@ -1,23 +1,25 @@
-.encounter_box{
-    overflow: hidden;
-    width: 100%;
-    max-height: 400px;
+.encounter_box {
+  overflow: hidden;
+  width: 100%;
+  max-height: 400px;
 }
 
-.encounter_box:hover{
-    overflow-y: scroll;
+.encounter_box:hover {
+  overflow-y: scroll;
 }
 
-.stat-box{
-    display: inline-block;
-    min-width: 90%;
+.stat-box {
+  display: inline-block;
+  min-width: 90%;
+  padding: 1rem;
 }
 
 .poke_encounters {
-    margin: 5% 0;
+  margin: 5% 0;
+  padding-bottom: 2rem;
 }
 
 h4 {
-    text-align: left;
-    padding-left: 2%;
+  text-align: left;
+  padding-left: 2%;
 }
