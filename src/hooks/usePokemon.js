@@ -31,16 +31,32 @@ const usePokemon = (pokemonId) => {
     const abortController = new AbortController();
 
     fetch(speciesUrl, { signal: abortController.signal })
-      .then((res) => res.json())
+      .then((res) => {
+        console.log(res.ok);
+        if (!res.ok) return null;
+
+        return res.json();
+      })
       .then((speciesData) => {
         Promise.all([
-          fetch(pokemonUrl),
-          fetch(nextPokemonUrl),
-          fetch(prevPokemonUrl),
-          fetch(speciesData.evolution_chain.url),
-          fetch(encountersUrl),
+          fetch(pokemonUrl, { signal: abortController.signal }),
+          fetch(nextPokemonUrl, { signal: abortController.signal }),
+          fetch(prevPokemonUrl, { signal: abortController.signal }),
+          fetch(speciesData?.evolution_chain?.url ?? speciesUrl, {
+            signal: abortController.signal,
+          }),
+          fetch(encountersUrl, { signal: abortController.signal }),
         ])
-          .then((responses) => Promise.all(responses.map((res) => res.json())))
+          .then((responses) =>
+            Promise.all(
+              responses.map((res) => {
+                console.log(res.ok);
+                if (!res.ok) return null;
+
+                return res.json();
+              })
+            )
+          )
           .then(
             ([
               pokemonData,
@@ -49,11 +65,13 @@ const usePokemon = (pokemonId) => {
               evolutionChainData,
               encountersData,
             ]) => {
-              tempEvolutionChain.push(evolutionChainData.chain.species);
-              let currentEvolution = evolutionChainData.chain.evolves_to[0];
-              while (currentEvolution) {
-                tempEvolutionChain.push(currentEvolution.species);
-                currentEvolution = currentEvolution.evolves_to[0];
+              if (evolutionChainData) {
+                tempEvolutionChain.push(evolutionChainData.chain.species);
+                let currentEvolution = evolutionChainData.chain.evolves_to[0];
+                while (currentEvolution) {
+                  tempEvolutionChain.push(currentEvolution.species);
+                  currentEvolution = currentEvolution.evolves_to[0];
+                }
               }
               setPokemon(pokemonData);
               setEvolutionChain(tempEvolutionChain);
