@@ -9,8 +9,11 @@ import {
   TableHead,
   TableRow,
   Button,
+  Tooltip,
 } from "@mui/material";
+import TocIcon from "@mui/icons-material/Toc";
 import { NavLink } from "react-router-dom";
+import CloseIcon from "@mui/icons-material/Close";
 // import Filters from "./components/Filters/Filters";
 
 const ELEMENTS_IN_PAGE = 15;
@@ -47,8 +50,33 @@ const App = () => {
   //   setFiltersTooltip(filtersShow ? "Show filters" : "Hide filters");
   // };
 
+  const handleTableShow = () => {
+    const table = document.querySelector(".pokemon_table");
+    const main = document.querySelector(".pokemon-info");
+    const button = document.querySelector(".app_show-table");
+    table.classList.add("show");
+    main.classList.add("hide");
+    button.classList.add("hide");
+  };
+
+  const handleTableHide = () => {
+    const table = document.querySelector(".pokemon_table");
+    const main = document.querySelector(".pokemon-info");
+    const button = document.querySelector(".app_show-table");
+    table.classList.remove("show");
+    main.classList.remove("hide");
+    button.classList.remove("hide");
+  };
+
   return (
     <div key={"App_Div"} className="App">
+      <div className="app_show-table">
+        <Tooltip title="Show pokemon list">
+          <Button variant="contained" size="medium" onClick={handleTableShow}>
+            <TocIcon />
+          </Button>
+        </Tooltip>
+      </div>
       <div key={"TableDiv"} className={"sticky pokemon_table"}>
         {!loading ? (
           <Table
@@ -65,7 +93,14 @@ const App = () => {
                 <TableCell key={"TableCell_Pokemon"} align="center">
                   Pokemon
                 </TableCell>
-                <TableCell key={"TableCell_Link"} align="center"></TableCell>
+                <TableCell key={"TableCell_Link"} align="center">
+                  <Tooltip title="Hide pokemon list">
+                    <CloseIcon
+                      onClick={handleTableHide}
+                      className="close_table_button"
+                    />
+                  </Tooltip>
+                </TableCell>
               </TableRow>
             </TableHead>
             {/* {filtersShow && <Filters />} */}
@@ -95,6 +130,7 @@ const App = () => {
                         <NavLink
                           to={`/pokemon/${number}`}
                           key={number + "_link"}
+                          onClick={handleTableHide}
                         >
                           <Button>More</Button>
                         </NavLink>

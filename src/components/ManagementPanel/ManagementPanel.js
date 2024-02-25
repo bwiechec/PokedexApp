@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import { usePokemonData } from "../../context/pokemonContext";
+import { Tooltip } from "@mui/material";
 
 export default function ManagementPanel() {
   const {
@@ -30,7 +31,7 @@ export default function ManagementPanel() {
             fontSize: "40px",
             maxWidth: "20%",
             float: "left",
-            marginLeft: "5%",
+            marginLeft: "1rem",
             justifyContent: "center",
             position: "absolute",
             left: "0",
@@ -40,9 +41,11 @@ export default function ManagementPanel() {
             to={`/pokemon/${prevPokemonData.prev}`}
             style={{ textDecoration: "none" }}
           >
-            <Button variant="contained" size="medium">
-              <NavigateBeforeIcon />
-            </Button>
+            <Tooltip title="Previous Pokemon" placement="right">
+              <Button variant="contained" size="medium">
+                <NavigateBeforeIcon />
+              </Button>
+            </Tooltip>
           </NavLink>
         </div>
       )}
@@ -64,7 +67,7 @@ export default function ManagementPanel() {
             fontSize: "40px",
             maxWidth: "20%",
             float: "right",
-            marginRight: "5%",
+            marginRight: "1rem",
             position: "absolute",
             right: "0",
           }}
@@ -73,9 +76,11 @@ export default function ManagementPanel() {
             to={`/pokemon/${nextPokemonData.next}`}
             style={{ textDecoration: "none" }}
           >
-            <Button variant="contained" size="medium">
-              <NavigateNextIcon />
-            </Button>
+            <Tooltip title="Next Pokemon" placement="left">
+              <Button variant="contained" size="medium">
+                <NavigateNextIcon />
+              </Button>
+            </Tooltip>
           </NavLink>
         </div>
       )}

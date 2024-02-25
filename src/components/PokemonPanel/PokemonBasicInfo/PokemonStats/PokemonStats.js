@@ -13,7 +13,12 @@ export default function PokemonStats() {
     <div
       key={"pokeStats_component"}
       className={"stat_box"}
-      style={{ display: "inline-table", width: "45%", padding: "1rem" }}
+      style={{
+        display: "inline-table",
+        width: "45%",
+        padding: "1rem",
+        paddingTop: "0",
+      }}
     >
       <h3 key={"Pokemon_stats"}>Statistics: </h3>
       <List key={"stats_list"}>

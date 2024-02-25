@@ -14,25 +14,27 @@ export default function PokemonType() {
       className={"stat_box"}
       style={{
         display: "inline-table",
-        marginLeft: "5%",
         width: "45%",
-        paddingBottom: "2.5%",
+        padding: "1rem",
+        paddingTop: "0",
         height: "fit-content",
       }}
     >
       <h3 key={"Pokemon_Type"}>Type: </h3>
-      {pokemon.types.map((item) => {
-        return (
-          <Button
-            key={item.type.name}
-            className={classes[item.type.name] + " " + classes.typeButton}
-            variant="contained"
-            size="medium"
-          >
-            {item.type.name}
-          </Button>
-        );
-      })}
+      <div style={{ display: "flex", gap: "0.5rem", justifyContent: "center" }}>
+        {pokemon.types.map((item) => {
+          return (
+            <Button
+              key={item.type.name}
+              className={classes[item.type.name] + " " + classes.typeButton}
+              variant="contained"
+              size="medium"
+            >
+              {item.type.name}
+            </Button>
+          );
+        })}
+      </div>
     </div>
   );
 }

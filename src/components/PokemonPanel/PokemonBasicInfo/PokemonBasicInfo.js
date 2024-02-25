@@ -1,6 +1,7 @@
 import React from "react";
 import PokemonType from "./PokemonType/PokemonType";
 import PokemonStats from "./PokemonStats/PokemonStats";
+import "./PokemonBasicInfo.css";
 
 export default function PokemonBasicInfo() {
   return (

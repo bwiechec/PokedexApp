@@ -47,7 +47,7 @@ export default function PokemonEncounters() {
               );
             })
           ) : (
-            <p style={{ marginBottom: "1rem" }}>"No encounters"</p>
+            <p style={{ marginBottom: "1rem" }}>No encounters</p>
           )}
         </List>
       </div>

@@ -86,8 +86,6 @@ const usePokemon = (pokemonId) => {
     };
   }, [pokemonId]);
 
-  console.log(evolutionChain);
-
   return {
     pokemon,
     evolutionChain,

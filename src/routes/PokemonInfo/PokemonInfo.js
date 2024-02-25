@@ -52,7 +52,7 @@ export default function PokemonInfo() {
         encounters,
       }}
     >
-      <main>
+      <main className="pokemon-info">
         <ManagementPanel />
 
         <PokemonPanel />
