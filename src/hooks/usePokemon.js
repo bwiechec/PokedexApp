@@ -32,7 +32,6 @@ const usePokemon = (pokemonId) => {
 
     fetch(speciesUrl, { signal: abortController.signal })
       .then((res) => {
-        console.log(res.ok);
         if (!res.ok) return null;
 
         return res.json();
@@ -50,7 +49,6 @@ const usePokemon = (pokemonId) => {
           .then((responses) =>
             Promise.all(
               responses.map((res) => {
-                console.log(res.ok);
                 if (!res.ok) return null;
 
                 return res.json();
