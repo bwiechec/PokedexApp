@@ -45,11 +45,6 @@ const App = () => {
       });
   }, [currentPage]);
 
-  // const changeFilterVisibility = () => {
-  //   setFiltersShow((prev) => !prev);
-  //   setFiltersTooltip(filtersShow ? "Show filters" : "Hide filters");
-  // };
-
   const handleTableShow = () => {
     const table = document.querySelector(".pokemon_table");
     const main = document.querySelector(".pokemon-info");
