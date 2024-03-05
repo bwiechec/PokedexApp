@@ -36,6 +36,7 @@
 .electric,
 .electric:hover {
   background-color: yellow !important;
+  color: black !important;
 }
 
 .ground,

@@ -82,6 +82,7 @@ const usePokemon = (pokemonId) => {
                 ? setIsPrev(true)
                 : setIsPrev(false);
 
+              //TODO FIX FOR 1025 pokemon
               nextPokemonData.results.length
                 ? setNext(parseInt(pokemonId) + 1)
                 : setNext(0);
