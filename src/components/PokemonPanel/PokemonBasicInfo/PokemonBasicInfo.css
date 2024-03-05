@@ -1,0 +1,11 @@
+@media (max-width: 648px) {
+  .pokeStats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.pokeStats {
+  gap: 2rem;
+}

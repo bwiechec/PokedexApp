@@ -1,37 +1,53 @@
 import React from "react";
-import {List, ListItem} from "@mui/material";
-import ListItemText from '@mui/material/ListItemText';
+import { List, ListItem } from "@mui/material";
+import ListItemText from "@mui/material/ListItemText";
+import { usePokemonData } from "../../../../context/pokemonContext";
+import "./PokemonStats.module.css";
 
-
-export default function PokemonStats(props) {
-  const stat = props.statList;
-
-  let statDiv = [<h3 key={'Pokemon_stats'}>Statistics: </h3>];
-  let statList = []
-  if (stat !== null) {
-    stat.forEach((item) => {
-      item !== null ?
-        statList.push(
-          <ListItem key={item[0].toUpperCase() + '_item'} disablePadding>
-            {/*<ListItemButton>*/}
-            <ListItemText key={item[0].toUpperCase()} primary={item[0][0].toUpperCase() + item[0].slice(1,)}/>
-            <progress key={item[0].toUpperCase() + '_progress'} id={item[0]} value={item[1]} max="225"
-                      style={{maxWidth: '40%'}}> {item[1]}%
-            </progress>
-            {/*</ListItemButton>*/}
-          </ListItem>
-        )
-        :
-        statList.push("")
-    })
-    statDiv.push(<List key={'List'} style={{padding: "5%"}}>{statList}</List>)
-  } else {
-    statDiv = ''
-  }
+export default function PokemonStats() {
+  const {
+    pokemonData: { pokemon },
+  } = usePokemonData();
 
   return (
-    <div key={'pokeStats_component'} className={'stat_box'} style={{display: "inline-table", width: '45%'}}>
-      {statDiv}
+    <div
+      key={"pokeStats_component"}
+      className={"stat_box"}
+      style={{
+        display: "inline-table",
+        width: "45%",
+        padding: "1rem",
+        paddingTop: "0",
+      }}
+    >
+      <h3 key={"Pokemon_stats"}>Statistics: </h3>
+      <List key={"stats_list"}>
+        {pokemon.stats.map((item) => {
+          return (
+            <ListItem
+              key={item.stat.name.toUpperCase() + "_item"}
+              disablePadding
+            >
+              <ListItemText
+                key={item.stat.name.toUpperCase()}
+                primary={
+                  item.stat.name[0].toUpperCase() + item.stat.name.slice(1)
+                }
+              />
+              <progress
+                key={item.stat.name.toUpperCase() + "_progress"}
+                id={item.stat.name}
+                value={item.base_stat}
+                max="225"
+                style={{ maxWidth: "40%" }}
+              >
+                {" "}
+                {item.base_stat}%
+              </progress>
+            </ListItem>
+          );
+        })}
+      </List>
     </div>
   );
 }

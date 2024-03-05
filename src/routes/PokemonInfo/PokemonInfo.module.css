@@ -1,11 +1,18 @@
-.stat_box{
-    box-shadow: 5px 5px 3px 0 rgba(0, 0, 0, 0.05);
-    background-color: #FFFFFF;
+.stat_box {
+  box-shadow: 5px 5px 3px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
 }
 
 main {
-    padding: 1rem 0;
-    justify-content: center;
-    position: relative;
-    width: 100%;
+  padding: 1rem 0;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  main {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
 }

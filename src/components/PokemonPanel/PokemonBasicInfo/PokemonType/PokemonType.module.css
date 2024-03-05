@@ -1,72 +1,90 @@
-.normal, .normal:hover{
-    background-color: gray !important;
+.normal,
+.normal:hover {
+  background-color: gray !important;
 }
 
-.fighting, .fighting:hover{
-    background-color: darkred !important;
+.fighting,
+.fighting:hover {
+  background-color: darkred !important;
 }
 
-.flying, .flying:hover{
-    background-color: #61dafb !important;
+.flying,
+.flying:hover {
+  background-color: #61dafb !important;
 }
 
-.poison, .poison:hover{
-    background-color: #9c41f2 !important;
+.poison,
+.poison:hover {
+  background-color: #9c41f2 !important;
 }
 
-.fire, .fire:hover{
-    background-color: red !important;
+.fire,
+.fire:hover {
+  background-color: red !important;
 }
 
-.water, .water:hover{
-    background-color: deepskyblue !important;
+.water,
+.water:hover {
+  background-color: deepskyblue !important;
 }
 
-.grass, .grass:hover{
-    background-color: #88c943 !important;
+.grass,
+.grass:hover {
+  background-color: #88c943 !important;
 }
 
-.electric, .electric:hover{
-    background-color: yellow !important;
+.electric,
+.electric:hover {
+  background-color: yellow !important;
+  color: black !important;
 }
 
-.ground, .ground:hover{
-    background-color: beige !important;
+.ground,
+.ground:hover {
+  background-color: beige !important;
+  color: black !important;
 }
 
-.rock, .rock:hover{
-    background-color: sandybrown !important;
+.rock,
+.rock:hover {
+  background-color: sandybrown !important;
 }
 
-.psychic, .psychic:hover{
-    background-color: hotpink !important;
+.psychic,
+.psychic:hover {
+  background-color: hotpink !important;
 }
-.ice, .ice:hover{
-    background-color: lightblue !important;
-}
-
-.bug, .bug:hover{
-    background-color: yellowgreen !important;
-}
-.ghost, .ghost:hover{
-    background-color: mediumpurple !important;
-}
-.steel, .steel:hover{
-    background-color: lightslategray !important;
+.ice,
+.ice:hover {
+  background-color: lightblue !important;
+  color: black !important;
 }
 
-.dragon, .dragon:hover{
-    background-color: rebeccapurple !important;
+.bug,
+.bug:hover {
+  background-color: yellowgreen !important;
+}
+.ghost,
+.ghost:hover {
+  background-color: mediumpurple !important;
+}
+.steel,
+.steel:hover {
+  background-color: lightslategray !important;
 }
 
-.dark, .dark:hover{
-    background-color: brown !important;
+.dragon,
+.dragon:hover {
+  background-color: rebeccapurple !important;
 }
 
-.fairy, .fairy:hover{
-    background-color: pink !important;
+.dark,
+.dark:hover {
+  background-color: brown !important;
 }
 
-.typeButton{
-    margin-left: 10px !important;
+.fairy,
+.fairy:hover {
+  background-color: pink !important;
+  color: black !important;
 }

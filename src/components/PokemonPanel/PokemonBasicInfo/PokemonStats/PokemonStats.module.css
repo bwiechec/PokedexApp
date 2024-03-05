@@ -1,3 +1,7 @@
-.typeButton{
-    margin-left: 10px !important;
+.typeButton {
+  margin-left: 10px !important;
+}
+
+.stat_box {
+  padding: 1rem;
 }
